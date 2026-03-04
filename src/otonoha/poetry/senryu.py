@@ -1,4 +1,4 @@
-"""Senryu poem class (5-7-5, humorous/human-focused)."""
+"""Senryu (and Haiku) poem class — 5-7-5 structure."""
 
 from __future__ import annotations
 from otonoha.poetry.base import Poem
@@ -7,7 +7,11 @@ from otonoha.music.music import Music
 
 
 class Senryu(Poem):
-    """A senryu poem with three phrases (5-7-5)."""
+    """A 5-7-5 poem.
+
+    Both senryu and haiku share this structure.
+    ``Haiku`` is provided as an alias in ``otonoha.poetry.haiku``.
+    """
 
     def __init__(self) -> None:
         self._first: str = ""

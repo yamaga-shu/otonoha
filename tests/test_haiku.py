@@ -1,5 +1,9 @@
-from otonoha import Haiku
+from otonoha import Haiku, Senryu
 from otonoha.music.music import Music
+
+
+def test_haiku_is_senryu_alias():
+    assert Haiku is Senryu
 
 
 def test_haiku_chaining():
@@ -18,6 +22,6 @@ def test_haiku_music_returns_music():
         .first("古池や")
         .second("蛙とびこむ")
         .third("水の音")
-        .music(style="lofi")
+        .music(style="jazz")
     )
     assert isinstance(music, Music)

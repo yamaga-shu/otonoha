@@ -1,33 +1,9 @@
-"""Haiku poem class (5-7-5)."""
+"""Haiku is an alias for Senryu — both use a 5-7-5 structure."""
 
-from __future__ import annotations
-from otonoha.poetry.base import Poem
-from otonoha.music.generator import MusicGenerator
-from otonoha.music.music import Music
+from otonoha.poetry.senryu import Senryu
 
+# Haiku and Senryu share the same 5-7-5 form.
+# Kigo (seasonal word) detection is out of scope for initial development.
+Haiku = Senryu
 
-class Haiku(Poem):
-    """A haiku poem with three phrases (5-7-5)."""
-
-    def __init__(self) -> None:
-        self._first: str = ""
-        self._second: str = ""
-        self._third: str = ""
-
-    def first(self, phrase: str) -> Haiku:
-        self._first = phrase
-        return self
-
-    def second(self, phrase: str) -> Haiku:
-        self._second = phrase
-        return self
-
-    def third(self, phrase: str) -> Haiku:
-        self._third = phrase
-        return self
-
-    def lines(self) -> list[str]:
-        return [self._first, self._second, self._third]
-
-    def music(self, style: str = "lofi", **kwargs) -> Music:
-        return MusicGenerator.from_poem(self, style=style, **kwargs)
+__all__ = ["Haiku"]
